@@ -8,8 +8,7 @@ const events = [
     title: 'Launch Day: Intro To Cloud Computing With AWS Cloud Club at UH💻🐾',
     date: 'Thursday, April 2nd, @ 3:00 PM - 4:30 PM',
     location: 'University of Houston Sugar Land, SAB 1 Room: 249',
-    desc: 'Introduction to the AWS Cloud — Live Demo + Career Insights
-',
+    desc: 'Introduction to the AWS Cloud — Live Demo + Career Insights',
   },
   {
     title: 'TBD — Check Meetup',
