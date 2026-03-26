@@ -108,6 +108,8 @@ const TeamPage = () => (
             </a>
           </div>
         </ScrollReveal>
+      </div>
+    </section>
   </PageLayout>
 );
 
