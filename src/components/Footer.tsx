@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Instagram, Linkedin, MessageCircle } from 'lucide-react';
+import { Instagram, Linkedin, Discord } from 'lucide-react';
 import { EXTERNAL_LINKS } from '@/config/externalLinks';
 
 const Footer = () => (
@@ -40,7 +40,7 @@ const Footer = () => (
           </a>
           <a href={EXTERNAL_LINKS.discord} target="_blank" rel="noopener noreferrer"
             className="p-2 rounded-lg text-muted-foreground hover:text-secondary hover:bg-muted/50 transition-all active:scale-95">
-            <MessageCircle className="w-5 h-5" />
+            <Discord className="w-5 h-5" />
           </a>
         </div>
       </div>
