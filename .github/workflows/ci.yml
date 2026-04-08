@@ -33,7 +33,7 @@ jobs:
         run: |
           BASE=${{ github.event.pull_request.base.sha }}
           HEAD=${{ github.event.pull_request.head.sha }}
-          git fetch --depth=1 origin "$BASE" "$HEAD"
+          git fetch --depth=2 origin "$BASE" "$HEAD"
           CHANGED=$(git diff --name-only "$BASE" "$HEAD")
           if echo "$CHANGED" | grep -q '^package\.json$'; then
             if ! echo "$CHANGED" | grep -q '^package-lock\.json$'; then
