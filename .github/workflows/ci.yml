@@ -28,6 +28,20 @@ jobs:
           node-version: 20
           cache: npm
 
+      - name: Check lockfile is in sync with package.json
+        if: github.event_name == 'pull_request'
+        run: |
+          BASE=${{ github.event.pull_request.base.sha }}
+          HEAD=${{ github.event.pull_request.head.sha }}
+          git fetch --depth=1 origin "$BASE" "$HEAD"
+          CHANGED=$(git diff --name-only "$BASE" "$HEAD")
+          if echo "$CHANGED" | grep -q '^package\.json$'; then
+            if ! echo "$CHANGED" | grep -q '^package-lock\.json$'; then
+              echo "::error::package.json was changed but package-lock.json was not updated. Run 'npm install' and commit the updated lockfile."
+              exit 1
+            fi
+          fi
+
       - name: Install dependencies
         run: npm ci
 
