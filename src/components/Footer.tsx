@@ -19,6 +19,7 @@ const Footer = () => (
           {[
             { label: 'About', to: '/about' },
             { label: 'Events', to: '/events' },
+            { label: 'Learning Paths', to: '/learning-paths' },
             { label: 'Resources', to: '/resources' },
             { label: 'Team', to: '/team' },
           ].map((l) => (

@@ -5,10 +5,11 @@ import { EXTERNAL_LINKS } from "@/config/externalLinks";
 import { renderWithRouter } from "./test-utils";
 
 describe("Footer", () => {
-    it("renders all four internal navigation links", () => {
+    it("renders all five internal navigation links", () => {
         renderWithRouter(<Footer />);
         expect(screen.getByRole("link", { name: "About" })).toBeInTheDocument();
         expect(screen.getByRole("link", { name: "Events" })).toBeInTheDocument();
+        expect(screen.getByRole("link", { name: "Learning Paths" })).toBeInTheDocument();
         expect(screen.getByRole("link", { name: "Resources" })).toBeInTheDocument();
         expect(screen.getByRole("link", { name: "Team" })).toBeInTheDocument();
     });

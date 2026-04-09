@@ -6,6 +6,7 @@ import { EXTERNAL_LINKS } from '@/config/externalLinks';
 const navLinks = [
   { label: 'About', to: '/about' },
   { label: 'Events', to: '/events' },
+  { label: 'Learning Paths', to: '/learning-paths' },
   { label: 'Resources', to: '/resources' },
   { label: 'Team', to: '/team' },
 ];
@@ -25,9 +26,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass shadow-lg' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass shadow-lg' : 'bg-transparent'
+        }`}
     >
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
@@ -43,9 +43,8 @@ const Navbar = () => {
             <Link
               key={link.to}
               to={link.to}
-              className={`text-sm font-medium transition-colors duration-200 hover:text-primary ${
-                location.pathname === link.to ? 'text-primary' : 'text-muted-foreground'
-              }`}
+              className={`text-sm font-medium transition-colors duration-200 hover:text-primary ${location.pathname === link.to ? 'text-primary' : 'text-muted-foreground'
+                }`}
             >
               {link.label}
             </Link>
@@ -77,9 +76,8 @@ const Navbar = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`text-sm font-medium py-2 transition-colors ${
-                  location.pathname === link.to ? 'text-primary' : 'text-muted-foreground'
-                }`}
+                className={`text-sm font-medium py-2 transition-colors ${location.pathname === link.to ? 'text-primary' : 'text-muted-foreground'
+                  }`}
               >
                 {link.label}
               </Link>

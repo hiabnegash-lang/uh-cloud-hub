@@ -73,7 +73,7 @@ test.describe("Navigation flow", () => {
     test("learning paths is reachable by direct URL for internal review", async ({ page }) => {
         await page.goto("/learning-paths");
         await expect(
-            page.getByRole("heading", { name: /Your Cloud Path/i }),
+            page.getByRole("heading", { name: /Learning Paths/i }),
         ).toBeVisible();
     });
 });

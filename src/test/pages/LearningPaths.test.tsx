@@ -6,6 +6,6 @@ import { renderWithRouter } from "../test-utils";
 describe("Learning Paths page", () => {
     it("renders the learning paths route content", () => {
         renderWithRouter(<LearningPathsPage />);
-        expect(screen.getByRole("heading", { name: /Your Cloud Path/i })).toBeInTheDocument();
+        expect(screen.getByRole("heading", { name: /Learning Paths/i })).toBeInTheDocument();
     });
 });

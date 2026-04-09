@@ -11,10 +11,11 @@ describe("Navbar", () => {
         expect(homeLogo).toBeInTheDocument();
     });
 
-    it("renders all four desktop nav links", () => {
+    it("renders all five desktop nav links", () => {
         renderWithRouter(<Navbar />);
         expect(screen.getByRole("link", { name: "About" })).toBeInTheDocument();
         expect(screen.getByRole("link", { name: "Events" })).toBeInTheDocument();
+        expect(screen.getByRole("link", { name: "Learning Paths" })).toBeInTheDocument();
         expect(screen.getByRole("link", { name: "Resources" })).toBeInTheDocument();
         expect(screen.getByRole("link", { name: "Team" })).toBeInTheDocument();
     });
@@ -57,6 +58,9 @@ describe("Navbar", () => {
     it("inactive nav links receive the text-muted-foreground class", () => {
         renderWithRouter(<Navbar />, { initialRoute: "/about" });
         expect(screen.getByRole("link", { name: "Events" })).toHaveClass(
+            "text-muted-foreground",
+        );
+        expect(screen.getByRole("link", { name: "Learning Paths" })).toHaveClass(
             "text-muted-foreground",
         );
         expect(screen.getByRole("link", { name: "Resources" })).toHaveClass(

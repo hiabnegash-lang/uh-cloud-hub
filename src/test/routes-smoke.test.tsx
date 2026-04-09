@@ -48,7 +48,7 @@ describe("route smoke tests", () => {
 
     it("renders learning paths route", () => {
         renderRoute("/learning-paths");
-        expect(screen.getByRole("heading", { name: /Your Cloud Path/i })).toBeInTheDocument();
+        expect(screen.getByRole("heading", { name: /Learning Paths/i })).toBeInTheDocument();
     });
 
     it("renders team route", () => {

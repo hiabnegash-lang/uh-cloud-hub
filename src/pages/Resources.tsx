@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef, type ReactNode } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import ScrollReveal from '@/components/ScrollReveal';
 import PageLayout from '@/components/PageLayout';
@@ -363,13 +363,25 @@ function launchConfetti() {
 // Main page
 // ─────────────────────────────────────────────────────────────────────────────
 
-export default function Resources() {
+interface ResourcesPageProps {
+    pageHeading?: ReactNode;
+    pageDescription?: string;
+}
+
+export default function Resources({ pageHeading, pageDescription }: ResourcesPageProps = {}) {
     const [checked, setChecked] = useState<number[]>([]);
     const [celebrationRun, setCelebrationRun] = useState(0);
     const [showCelebration, setShowCelebration] = useState(false);
     const prefersReducedMotion = useReducedMotion();
     const previousProgressRef = useRef(0);
     const didMountRef = useRef(false);
+    const headingContent = pageHeading ?? (
+        <>
+            Your <span className="text-gradient">Cloud Path</span>
+        </>
+    );
+    const descriptionContent = pageDescription ??
+        'Everything you need to go from zero to AWS certified — curated, ordered, and trackable. Check off resources as you complete them.';
 
     // Load from localStorage on mount
     useEffect(() => {
@@ -431,11 +443,10 @@ export default function Resources() {
                     <ScrollReveal>
                         <div className="mb-10">
                             <h1 className="font-heading font-bold text-4xl md:text-5xl text-foreground mb-3">
-                                Your <span className="text-gradient">Cloud Path</span>
+                                {headingContent}
                             </h1>
                             <p className="text-slate-400 text-base leading-relaxed">
-                                Everything you need to go from zero to AWS certified — curated,
-                                ordered, and trackable. Check off resources as you complete them.
+                                {descriptionContent}
                             </p>
                         </div>
                     </ScrollReveal>
