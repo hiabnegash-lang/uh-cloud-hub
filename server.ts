@@ -9,6 +9,11 @@ const app = express();
 const port = process.env.PORT || 3000;
 const distPath = path.join(__dirname, "dist");
 
+// Trust the first proxy hop (e.g., Render's reverse proxy) so that
+// express-rate-limit reads the real client IP from X-Forwarded-For
+// instead of the proxy's IP, preventing all users from sharing one limit.
+app.set("trust proxy", 1);
+
 const spaFallbackLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100, // limit each IP to 100 requests per windowMs
