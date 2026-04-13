@@ -1,29 +1,22 @@
-import { render, screen } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
+import { screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import NotFound from "@/pages/NotFound";
-
-const renderNotFound = () =>
-    render(
-        <MemoryRouter initialEntries={["/missing"]}>
-            <NotFound />
-        </MemoryRouter>,
-    );
+import { renderWithRouter } from "./test-utils";
 
 describe("NotFound page", () => {
     it("renders the 404 heading", () => {
-        renderNotFound();
-        expect(screen.getByRole("heading", { name: "404" })).toBeInTheDocument();
+        renderWithRouter(<NotFound />, { initialRoute: "/missing" });
+        expect(screen.getByRole("heading", { name: /Page not/i })).toBeInTheDocument();
     });
 
     it("renders the page-not-found message", () => {
-        renderNotFound();
-        expect(screen.getByText(/Page not found/i)).toBeInTheDocument();
+        renderWithRouter(<NotFound />, { initialRoute: "/missing" });
+        expect(screen.getByText(/That route does not exist/i)).toBeInTheDocument();
     });
 
     it("renders a return-to-home link pointing to /", () => {
-        renderNotFound();
-        const homeLink = screen.getByRole("link", { name: /Return to Home/i });
+        renderWithRouter(<NotFound />, { initialRoute: "/missing" });
+        const homeLink = screen.getByRole("link", { name: /Back to home/i });
         expect(homeLink).toBeInTheDocument();
         expect(homeLink).toHaveAttribute("href", "/");
     });

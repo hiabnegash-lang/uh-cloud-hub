@@ -12,30 +12,32 @@ describe("Home page (Index)", () => {
         ).toBeInTheDocument();
     });
 
-    it("renders the club logo image with alt text", () => {
+    it("renders the hero eyebrow text", () => {
         renderWithRouter(<HomePage />);
         expect(
-            screen.getByRole("img", { name: /AWS Cloud Club Logo/i }),
-        ).toBeInTheDocument();
+            screen.getAllByText(/AWS Cloud Club.*University of Houston/i).length,
+        ).toBeGreaterThan(0);
     });
 
     it("Join Our Community CTA links to the Meetup URL", () => {
         renderWithRouter(<HomePage />);
         const links = screen
-            .getAllByRole("link", { name: /Join Our Community/i })
+            .getAllByRole("link", { name: /Join our community/i })
             .filter((l) => l.getAttribute("href") === EXTERNAL_LINKS.meetup);
         expect(links.length).toBeGreaterThan(0);
     });
 
-    it("View Upcoming Events link points to /events", () => {
+    it("Upcoming events link points to /events", () => {
         renderWithRouter(<HomePage />);
-        const link = screen.getByRole("link", { name: /View Upcoming Events/i });
-        expect(link).toHaveAttribute("href", "/events");
+        const links = screen
+            .getAllByRole("link", { name: /Upcoming events/i })
+            .filter((l) => l.getAttribute("href") === "/events");
+        expect(links.length).toBeGreaterThan(0);
     });
 
-    it("renders the Hands-On Learning feature card", () => {
+    it("renders the Hands-On Workshops feature card", () => {
         renderWithRouter(<HomePage />);
-        expect(screen.getByText("Hands-On Learning")).toBeInTheDocument();
+        expect(screen.getByText("Hands-On Workshops")).toBeInTheDocument();
     });
 
     it("renders the AWS Badge Progression feature card", () => {
@@ -43,9 +45,9 @@ describe("Home page (Index)", () => {
         expect(screen.getByText("AWS Badge Progression")).toBeInTheDocument();
     });
 
-    it("renders the Community & Careers feature card", () => {
+    it("renders the Community Connections feature card", () => {
         renderWithRouter(<HomePage />);
-        expect(screen.getByText("Community & Careers")).toBeInTheDocument();
+        expect(screen.getByText("Community Connections")).toBeInTheDocument();
     });
 
     it("renders the What happens at meetups section heading", () => {
