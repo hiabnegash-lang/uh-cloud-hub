@@ -309,7 +309,7 @@ app.post("/api/contact", contactLimiter, async (req, res) => {
     const safeMessageHtml = escapeHtml(message.trim());
 
     const { error: resendError } = await resend.emails.send({
-      from: "AWS Cloud Club UH <onboarding@resend.dev>",
+      from: "AWS Cloud Club UH <contact@cloudhubuh.com>",
       to: [CONTACT_TO],
       reply_to: `${safeName} <${email.trim()}>`,
       subject: `[Contact] ${safeSubject}`,
