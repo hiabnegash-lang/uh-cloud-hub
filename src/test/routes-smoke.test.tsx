@@ -78,6 +78,6 @@ describe("route smoke tests", () => {
 
     it("renders not found fallback", () => {
         renderRoute("/missing");
-        expect(screen.getByRole("heading", { name: "404" })).toBeInTheDocument();
+        expect(screen.getByRole("heading", { name: /Page not/i })).toBeInTheDocument();
     });
 });
