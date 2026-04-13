@@ -176,7 +176,9 @@ function parseRSS(xml) {
     let rawDate = null;
     if (dateMatch) {
       const year = dateMatch[3] || new Date().getFullYear();
-      const parsed = new Date(`${dateMatch[1]} ${dateMatch[2]}, ${year}`);
+      // Parse at noon Central time to avoid midnight-UTC shifting the date by one day
+      // when toLocaleDateString is called with America/Chicago timezone.
+      const parsed = new Date(`${dateMatch[1]} ${dateMatch[2]}, ${year} 12:00:00 GMT-0500`);
       if (!isNaN(parsed.getTime())) {
         rawDate = parsed.toISOString();
         date = parsed.toLocaleDateString("en-US", {
