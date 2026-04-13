@@ -31,7 +31,7 @@ describe("About page", () => {
         // Use selector:'p' to target the About section paragraph,
         // not the footer's copyright notice which contains similar text
         expect(
-            screen.getByText(/not an official AWS or Amazon employee/i, {
+            screen.getByText(/not an Amazon employee organization/i, {
                 selector: "p",
             }),
         ).toBeInTheDocument();

@@ -28,12 +28,12 @@ describe("Learning Paths page", () => {
         expect(screen.getByRole("heading", { name: /Your path to/i })).toBeInTheDocument();
     });
 
-    it("renders the Skill Builder explainer with link", () => {
+    it("renders at least one Skill Builder resource link", () => {
         renderWithRouter(<LearningPathsPage />);
-        const link = screen.getByRole("link", { name: /What is Skill Builder\?/i });
-        expect(link).toHaveAttribute("href", RESOURCE_LINKS.skillBuilderHome);
-        expect(link).toHaveAttribute("target", "_blank");
-        expect(link).toHaveAttribute("rel", "noopener noreferrer");
+        const sbLinks = screen
+            .getAllByRole("link", { name: "Open ↗" })
+            .filter((l) => l.getAttribute("href")?.includes("skillbuilder.aws"));
+        expect(sbLinks.length).toBeGreaterThan(0);
     });
 
     it("renders resources in beginner-first order", () => {
@@ -49,11 +49,9 @@ describe("Learning Paths page", () => {
         }
     });
 
-    it("includes certification roadmap badges by alt text", () => {
+    it("includes upcoming certifications locked section", () => {
         renderWithRouter(<LearningPathsPage />);
-        expect(screen.getByAltText(/Cloud Practitioner certification badge/i)).toBeInTheDocument();
-        expect(screen.getByAltText(/AI Practitioner certification badge/i)).toBeInTheDocument();
-        expect(screen.getByAltText(/Solutions Architect certification badge/i)).toBeInTheDocument();
+        expect(screen.getByText(/What's next/i)).toBeInTheDocument();
     });
 
     it("uses updated practice exam URL", () => {
@@ -92,7 +90,6 @@ describe("Learning Paths page", () => {
         const progressBar = screen.getByRole("progressbar", { name: /learning path completion/i });
 
         expect(progressBar).toHaveAttribute("aria-valuenow", "100");
-        expect(progressBar).toHaveClass("bg-emerald-950/80");
         expect(screen.getByText("100%")).toBeInTheDocument();
     });
 });

@@ -59,10 +59,10 @@ describe("Team page", () => {
         ).toBeInTheDocument();
     });
 
-    it("Apply to Join CTA links to the Meetup URL", () => {
+    it("Join our community CTA links to the Meetup URL", () => {
         renderWithRouter(<TeamPage />);
         const applyLinks = screen
-            .getAllByRole("link", { name: /Apply to Join/i })
+            .getAllByRole("link", { name: /Join our community/i })
             .filter((l) => l.getAttribute("href") === EXTERNAL_LINKS.meetup);
         expect(applyLinks.length).toBeGreaterThan(0);
     });
