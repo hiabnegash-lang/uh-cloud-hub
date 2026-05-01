@@ -46,8 +46,9 @@ describe("Footer", () => {
 
     it("renders the copyright notice", () => {
         renderWithRouter(<Footer />);
+        const currentYear = new Date().getFullYear();
         expect(
-            screen.getByText(/© 2026 AWS Student Builder Group at UH/i),
+            screen.getByText(new RegExp(`© ${currentYear} AWS Student Builder Group at UH`, 'i')),
         ).toBeInTheDocument();
     });
 

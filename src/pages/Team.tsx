@@ -111,6 +111,8 @@ const TeamPage = () => (
                 alt="Dr. Suresh Peddoju"
                 width={56}
                 height={56}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>
