@@ -103,38 +103,36 @@ const TeamPage = () => (
           </h2>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border max-w-3xl">
-          <ScrollReveal>
-            <div className="bg-background p-6 flex flex-col items-start gap-3">
-              <div className="w-14 h-14 rounded-full overflow-hidden bg-muted shrink-0">
-                <img
-                  src={peddojuHeadshot}
-                  alt="Dr. Suresh Peddoju"
-                  width={56}
-                  height={56}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="flex-1">
-                <p className="font-heading font-semibold text-foreground text-base leading-snug">
-                  Dr. Suresh Peddoju
-                </p>
-                <p className="text-sm text-muted-foreground mt-0.5 leading-snug">
-                  Faculty Advisor
-                </p>
-              </div>
-              <div className="space-y-1">
-                <a
-                  href="mailto:speddoju@central.uh.edu"
-                  className="text-sm text-primary hover:text-primary/80 transition-colors duration-150 block"
-                >
-                  speddoju@central.uh.edu
-                </a>
-                <p className="text-sm text-muted-foreground">+1 (713) 743-3898</p>
-              </div>
+        <ScrollReveal>
+          <div className="border border-border bg-background p-6 flex flex-col items-start gap-3 w-64">
+            <div className="w-14 h-14 rounded-full overflow-hidden bg-muted shrink-0">
+              <img
+                src={peddojuHeadshot}
+                alt="Dr. Suresh Peddoju"
+                width={56}
+                height={56}
+                className="w-full h-full object-cover"
+              />
             </div>
-          </ScrollReveal>
-        </div>
+            <div className="flex-1">
+              <p className="font-heading font-semibold text-foreground text-base leading-snug">
+                Dr. Suresh Peddoju
+              </p>
+              <p className="text-sm text-muted-foreground mt-0.5 leading-snug">
+                Faculty Advisor
+              </p>
+            </div>
+            <div className="space-y-1">
+              <a
+                href="mailto:speddoju@central.uh.edu"
+                className="text-sm text-primary hover:text-primary/80 transition-colors duration-150 block"
+              >
+                speddoju@central.uh.edu
+              </a>
+              <p className="text-sm text-muted-foreground">+1 (713) 743-3898</p>
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
 
