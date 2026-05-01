@@ -37,8 +37,8 @@ describe("About page", () => {
         ).toBeInTheDocument();
     });
 
-    it("mentions the AWS Cloud Clubs program", () => {
+    it("mentions the AWS Student Builder Groups program", () => {
         renderWithRouter(<AboutPage />);
-        expect(screen.getByText("AWS Cloud Clubs program")).toBeInTheDocument();
+        expect(screen.getByText("AWS Student Builder Groups program")).toBeInTheDocument();
     });
 });

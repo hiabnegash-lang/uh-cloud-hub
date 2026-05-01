@@ -1,6 +1,6 @@
-# UH AWS Cloud Club Website
+# UH AWS Student Builder Group Website
 
-This is the website for the University of Houston AWS Cloud Club.
+This is the website for the University of Houston AWS Student Builder Group.
 
 ## Local Development
 
