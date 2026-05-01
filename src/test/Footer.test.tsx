@@ -47,7 +47,7 @@ describe("Footer", () => {
     it("renders the copyright notice", () => {
         renderWithRouter(<Footer />);
         expect(
-            screen.getByText(/© 2026 AWS Cloud Club at UH/i),
+            screen.getByText(/© 2026 AWS Student Builder Group at UH/i),
         ).toBeInTheDocument();
     });
 

@@ -10,7 +10,7 @@ const features = [
   },
   {
     title: 'AWS Badge Progression',
-    desc: 'Every event moves you toward official AWS Cloud Clubs recognition milestones.',
+    desc: 'Every event moves you toward official AWS Student Builder Groups recognition milestones.',
   },
   {
     title: 'Community Connections',
@@ -28,7 +28,7 @@ const HomePage = () => (
 
           {/* Eyebrow */}
           <p className="hero-item hero-item-1 text-xs uppercase tracking-[0.18em] text-muted-foreground mb-10">
-            AWS Cloud Club &middot; University of Houston
+            AWS Student Builder Group &middot; University of Houston
           </p>
 
           {/* Headline */}
@@ -124,7 +124,7 @@ const HomePage = () => (
       <div className="container mx-auto px-6">
         <ScrollReveal>
           <p className="text-base text-muted-foreground max-w-[60ch]">
-            AWS Cloud Club at UH is part of the AWS Cloud Clubs program, a
+            AWS Student Builder Group at UH is part of the AWS Student Builder Groups program, a
             global network of student communities supported directly by Amazon
             Web Services.
           </p>
