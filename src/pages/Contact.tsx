@@ -43,13 +43,13 @@ const channels = [
   {
     icon: Linkedin,
     label: 'Connect on LinkedIn',
-    value: 'linkedin.com/company/aws-cloud-club-uh',
+    value: 'linkedin.com/company/aws-student-builder-group-uh',
     href: EXTERNAL_LINKS.linkedin,
   },
   {
     icon: Instagram,
     label: 'Follow on Instagram',
-    value: '@awscloudclub_uh',
+    value: '@awssbg_uh',
     href: EXTERNAL_LINKS.instagram,
   },
 ];
