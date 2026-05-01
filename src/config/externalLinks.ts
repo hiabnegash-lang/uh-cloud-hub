@@ -5,7 +5,7 @@
  */
 
 export const EXTERNAL_LINKS = {
-  meetup: 'https://www.meetup.com/aws-cloud-club-at-univ-of-houston/?eventOrigin=your_groups',
+  meetup: 'https://www.meetup.com/aws-sbg-at-univ-of-houston/',
   discord: 'https://discord.gg/8eABTmM8mT',
   linkedin: 'https://www.linkedin.com/company/aws-student-builder-group-uh',
   instagram: 'https://www.instagram.com/awssbg_uh/',
