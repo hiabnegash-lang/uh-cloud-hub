@@ -15,7 +15,7 @@ describe("Home page (Index)", () => {
     it("renders the hero eyebrow text", () => {
         renderWithRouter(<HomePage />);
         expect(
-            screen.getAllByText(/AWS Cloud Club.*University of Houston/i).length,
+            screen.getAllByText(/AWS Student Builder Group.*University of Houston/i).length,
         ).toBeGreaterThan(0);
     });
 

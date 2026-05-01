@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { EXTERNAL_LINKS } from '@/config/externalLinks';
-import clubLogo from '@/images/AWS_Cloud_Club_at_University_of_Houston-removebg-preview.png';
+import clubLogo from '@/images/aws-student-builder-group-logo.png';
 
 const navLinks = [
   { label: 'About', to: '/about' },
@@ -39,11 +39,11 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-2.5 group">
           <img
             src={clubLogo}
-            alt="AWS Cloud Club at UH"
+            alt="AWS Student Builder Group at UH"
             className="w-7 h-7 object-contain transition-transform duration-200 group-hover:scale-105"
           />
           <span className="font-heading font-bold text-sm text-foreground">
-            AWS Cloud Club{' '}
+            AWS Student Builder Group{' '}
             <span className="text-muted-foreground font-normal hidden sm:inline">at UH</span>
           </span>
         </Link>

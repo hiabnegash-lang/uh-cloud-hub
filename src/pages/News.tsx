@@ -82,7 +82,7 @@ const NewsPage = () => {
 
               <iframe
                 src={EXTERNAL_LINKS.cloudNews}
-                title="AWS Cloud Club UH: Cloud News"
+                title="AWS Student Builder Group UH: Cloud News"
                 className={`w-full h-full transition-opacity duration-500 ${
                   loaded ? 'opacity-100' : 'opacity-0'
                 }`}
@@ -106,7 +106,7 @@ const NewsPage = () => {
                     AWS Cloud News
                   </p>
                   <p className="text-xs text-muted-foreground mt-0.5">
-                    Curated by AWS Cloud Club UH
+                    Curated by AWS Student Builder Group UH
                   </p>
                 </div>
               </div>

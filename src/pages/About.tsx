@@ -10,7 +10,7 @@ const pillars = [
   },
   {
     title: 'AWS Badge Progression',
-    desc: 'Club events count toward official AWS Cloud Clubs recognition milestones. Track your progress and earn badges along the way.',
+    desc: 'Club events count toward official AWS Student Builder Groups recognition milestones. Track your progress and earn badges along the way.',
   },
   {
     title: 'Community & Careers',
@@ -96,8 +96,8 @@ const AboutPage = () => (
       <div className="container mx-auto px-6">
         <ScrollReveal>
           <p className="text-base text-muted-foreground max-w-[60ch]">
-            AWS Cloud Club at UH is part of the{' '}
-            <strong className="text-foreground font-medium">AWS Cloud Clubs program</strong>, a
+            AWS Student Builder Group at UH is part of the{' '}
+            <strong className="text-foreground font-medium">AWS Student Builder Groups program</strong>, a
             global network of student communities supported by Amazon Web Services.
             We are not an Amazon employee organization; we are students building
             for the cloud, together.
