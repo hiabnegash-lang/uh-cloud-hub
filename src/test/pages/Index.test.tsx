@@ -35,19 +35,19 @@ describe("Home page (Index)", () => {
         expect(links.length).toBeGreaterThan(0);
     });
 
-    it("renders the Hands-On Workshops feature card", () => {
+    it("renders the Build Projects for Your Resume feature card", () => {
         renderWithRouter(<HomePage />);
-        expect(screen.getByText("Hands-On Workshops")).toBeInTheDocument();
+        expect(screen.getByText("Build Projects for Your Resume")).toBeInTheDocument();
     });
 
-    it("renders the AWS Badge Progression feature card", () => {
+    it("renders the Certifications + Free Exam Vouchers feature card", () => {
         renderWithRouter(<HomePage />);
-        expect(screen.getByText("AWS Badge Progression")).toBeInTheDocument();
+        expect(screen.getByText("Certifications + Free Exam Vouchers")).toBeInTheDocument();
     });
 
-    it("renders the Community Connections feature card", () => {
+    it("renders the Community & Careers feature card", () => {
         renderWithRouter(<HomePage />);
-        expect(screen.getByText("Community Connections")).toBeInTheDocument();
+        expect(screen.getByText("Community & Careers")).toBeInTheDocument();
     });
 
     it("renders the What happens at meetups section heading", () => {
