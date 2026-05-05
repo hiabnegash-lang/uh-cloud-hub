@@ -13,8 +13,8 @@ const pillars = [
     desc: 'Club events count toward official AWS Student Builder Groups recognition milestones. Track your progress and earn badges along the way.',
   },
   {
-    title: 'Community & Careers',
-    desc: 'Connect with peers, alumni, and Houston-area cloud professionals. Build your network while you build in the cloud.',
+    title: 'A Global Builder Network',
+    desc: 'UH is part of the worldwide AWS Student Builder Groups program. Connect with Student Builder Campus Leaders, ambassadors, and nearby groups across Texas and beyond.',
   },
 ];
 

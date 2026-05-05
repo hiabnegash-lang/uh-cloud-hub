@@ -21,9 +21,9 @@ describe("About page", () => {
         expect(screen.getByText("AWS Badge Progression")).toBeInTheDocument();
     });
 
-    it("renders the Community & Careers card", () => {
+    it("renders the A Global Builder Network card", () => {
         renderWithRouter(<AboutPage />);
-        expect(screen.getByText("Community & Careers")).toBeInTheDocument();
+        expect(screen.getByText("A Global Builder Network")).toBeInTheDocument();
     });
 
     it("renders the official AWS disclaimer text", () => {
