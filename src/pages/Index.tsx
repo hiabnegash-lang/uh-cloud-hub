@@ -6,7 +6,7 @@ import { EXTERNAL_LINKS } from '@/config/externalLinks';
 const features = [
   {
     title: 'Build Projects for Your Resume',
-    desc: 'Deploy real AWS infrastructure every session, not slides, not theory. Walk away with portfolio-ready projects that show employers you can build.',
+    desc: 'Hands-on workshops led by AWS Developer Advocates and cloud professionals. Deploy real infrastructure every session and walk away with portfolio-ready projects.',
   },
   {
     title: 'Certifications + Free Exam Vouchers',
