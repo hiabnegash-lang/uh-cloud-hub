@@ -82,7 +82,7 @@ const HomePage = () => (
                 What we do
               </p>
               <h2 className="font-heading font-bold text-2xl leading-snug text-foreground">
-                What happens<br />at our meetups
+                Three things<br />we focus on
               </h2>
               <a
                 href="/events"
