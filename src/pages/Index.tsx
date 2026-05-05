@@ -5,16 +5,16 @@ import { EXTERNAL_LINKS } from '@/config/externalLinks';
 
 const features = [
   {
-    title: 'Hands-On Workshops',
-    desc: 'Build real things on AWS, not just slides and theory. Every session has something to deploy.',
+    title: 'Build Projects for Your Resume',
+    desc: 'Deploy real AWS infrastructure every session, not slides, not theory. Walk away with portfolio-ready projects that show employers you can build.',
   },
   {
-    title: 'AWS Badge Progression',
-    desc: 'Every event moves you toward official AWS Student Builder Groups recognition milestones.',
+    title: 'Certifications + Free Exam Vouchers',
+    desc: 'We prep you for AWS certifications with structured guidance and resources, and members get access to free exam vouchers to make it happen.',
   },
   {
-    title: 'Community Connections',
-    desc: 'Find people working through the same problems. Houston-area professionals, alumni, and peers.',
+    title: 'Direct Access to Industry People',
+    desc: 'AWS Developer Advocates, engineers, and alumni come to our events. Get career advice, referrals, and connections you won\'t find in a classroom.',
   },
 ];
 
