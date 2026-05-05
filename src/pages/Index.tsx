@@ -13,8 +13,8 @@ const features = [
     desc: 'We prep you for AWS certifications with structured guidance and resources, and members get access to free exam vouchers to make it happen.',
   },
   {
-    title: 'Direct Access to Industry People',
-    desc: 'AWS Developer Advocates, engineers, and alumni come to our events. Get career advice, referrals, and connections you won\'t find in a classroom.',
+    title: 'Community & Careers',
+    desc: 'Connect with peers, alumni, and cloud professionals. Build your network while you build in the cloud.',
   },
 ];
 

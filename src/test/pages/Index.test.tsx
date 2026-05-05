@@ -45,9 +45,9 @@ describe("Home page (Index)", () => {
         expect(screen.getByText("Certifications + Free Exam Vouchers")).toBeInTheDocument();
     });
 
-    it("renders the Direct Access to Industry People feature card", () => {
+    it("renders the Community & Careers feature card", () => {
         renderWithRouter(<HomePage />);
-        expect(screen.getByText("Direct Access to Industry People")).toBeInTheDocument();
+        expect(screen.getByText("Community & Careers")).toBeInTheDocument();
     });
 
     it("renders the What happens at meetups section heading", () => {
