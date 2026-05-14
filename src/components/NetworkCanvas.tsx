@@ -184,9 +184,6 @@ export default function NetworkCanvas({
             }
         };
 
-        init();
-        draw();
-
         const handleResize = () => {
             resize();
             if (prefersReducedMotion) {
@@ -194,9 +191,26 @@ export default function NetworkCanvas({
             }
         };
 
-        window.addEventListener('resize', handleResize);
+        const startCanvas = () => {
+            init();
+            draw();
+            window.addEventListener('resize', handleResize);
+        };
+
+        // Defer canvas start until the browser is idle so the RAF loop doesn't
+        // compete with React's initial render. requestIdleCallback fires after
+        // first paint; setTimeout(250) is the Safari fallback.
+        const idleId =
+            typeof requestIdleCallback !== 'undefined'
+                ? requestIdleCallback(startCanvas, { timeout: 2000 })
+                : setTimeout(startCanvas, 250);
 
         return () => {
+            if (typeof requestIdleCallback !== 'undefined') {
+                cancelIdleCallback(idleId as number);
+            } else {
+                clearTimeout(idleId as number);
+            }
             cancelAnimationFrame(frameRef.current);
             window.removeEventListener('resize', handleResize);
         };
