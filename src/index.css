@@ -93,29 +93,48 @@
   }
 }
 
-/* Hero entrance animations */
-@keyframes hero-fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-    filter: blur(3px);
+/* Hero entrance animations
+   opacity stays 1 so Lighthouse registers LCP the instant React renders the H1.
+   Desktop keeps blur for the entrance feel; mobile drops it to avoid software
+   rasterization on throttled CPUs. */
+
+@media (min-width: 768px) {
+  @keyframes hero-fade-up {
+    from { opacity: 1; transform: translateY(14px); filter: blur(2px); }
+    to   { opacity: 1; transform: translateY(0);    filter: blur(0);   }
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
+}
+
+@media (max-width: 767px) {
+  @keyframes hero-fade-up {
+    from { opacity: 1; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0);    }
   }
 }
 
 .hero-item {
-  opacity: 0;
-  animation: hero-fade-up 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 1;
+  animation: hero-fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.hero-item-1 { animation-delay: 0.05s; }
-.hero-item-2 { animation-delay: 0.18s; }
-.hero-item-3 { animation-delay: 0.30s; }
-.hero-item-4 { animation-delay: 0.42s; }
+.hero-item-1 { animation-delay: 0.03s; }
+.hero-item-2 { animation-delay: 0.05s; }
+.hero-item-3 { animation-delay: 0.14s; }
+.hero-item-4 { animation-delay: 0.22s; }
+
+/* Page-enter animation — replaces framer-motion motion.main in PageLayout.
+   Only animates transform so opacity is always 1: content is immediately visible
+   for LCP, but still gets a subtle slide-up entrance feel.
+   Skipped entirely for prefers-reduced-motion. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes page-enter {
+    from { transform: translateY(10px); }
+    to   { transform: translateY(0); }
+  }
+  .page-enter {
+    animation: page-enter 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
