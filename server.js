@@ -55,7 +55,7 @@ app.use(
       },
     },
     referrerPolicy: { policy: "strict-origin-when-cross-origin" },
-    crossOriginEmbedderPolicy: false, // allow external images (og:image, team headshots)
+    crossOriginEmbedderPolicy: false, // News page iframe (agentpierre.github.io) lacks CORP headers; COEP must stay off
   })
 );
 
