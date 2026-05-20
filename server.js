@@ -45,7 +45,7 @@ app.use(
         scriptSrc: ["'self'", "https://challenges.cloudflare.com"],
         styleSrc: ["'self'", "https://fonts.googleapis.com"],
         fontSrc: ["'self'", "https://fonts.gstatic.com"],
-        imgSrc: ["'self'", "data:", "https:"],
+        imgSrc: ["'self'", "data:"],
         connectSrc: ["'self'", "https://challenges.cloudflare.com"],
         frameSrc: ["https://agentpierre.github.io", "https://challenges.cloudflare.com"], // News page iframe + Turnstile
         objectSrc: ["'none'"],
@@ -55,9 +55,19 @@ app.use(
       },
     },
     referrerPolicy: { policy: "strict-origin-when-cross-origin" },
-    crossOriginEmbedderPolicy: false, // allow external images (og:image, team headshots)
+    crossOriginEmbedderPolicy: false, // News page iframe (agentpierre.github.io) lacks CORP headers; COEP must stay off
   })
 );
+
+// Permissions-Policy — Helmet 8 dropped this header, so set it manually.
+// Empty parens () deny the feature to all origins, including the page itself.
+app.use((_req, res, next) => {
+  res.setHeader(
+    "Permissions-Policy",
+    "camera=(), microphone=(), geolocation=(), payment=()"
+  );
+  next();
+});
 
 // CORS — restrict origins now so any future route is secure by default.
 // Update ALLOWED_ORIGINS with your production domain once deployed.
